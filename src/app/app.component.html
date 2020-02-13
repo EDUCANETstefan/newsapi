@@ -1,0 +1,52 @@
+<div class="top">
+  <img src="https://imageog.flaticon.com/icons/png/512/21/21601.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF">
+  <h1>NEWS API</h1>
+  <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" (change)="change($event)">
+  </form>
+  <button class="btn btn-primary" type="submit">Search</button>
+</div>
+
+<div class="box">
+  <div style="display: flex; flex-wrap: wrap">
+    <div class="items" *ngFor="let article of articles">
+      <div style="margin: 1%">
+        <div class="title">
+          {{article['title']}}
+        </div>
+
+        <div class="publishedAt">
+          {{article['publishedAt']}}
+        </div>
+
+        <div class="container">
+
+          <div class="text">
+            <div class="description">
+            {{article['description']}}
+          </div>
+
+          <div class="content">
+            {{article['content']}}
+            </div>
+          </div>
+
+          <div class="urlToImage">
+            <img class="img1" src="{{article['urlToImage']}}">
+          </div>
+
+        </div>
+    
+        <div class="url">
+          <a href="{{article['url']}}">Link</a>
+        </div>
+
+        <div class="author">
+          <p>Author: {{article['author']}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>Made by Stefan Rajilić</footer>
